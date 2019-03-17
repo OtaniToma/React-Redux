@@ -7,6 +7,11 @@ import VideoDetail from './VideoDetail';
 class App extends React.Component {
   state = { videos: [], selectedVideo: null };
 
+  // デフォルトの検索語句を設定
+  componentDidMount() {
+    this.onTermSubmit('kraftwerk')
+  }
+
   onTermSubmit = async term => {
     const response = await youtube.get('/search', {
       params: {
@@ -14,7 +19,11 @@ class App extends React.Component {
       }
     });
 
-    this.setState({ videos: response.data.items });
+    this.setState({ 
+      videos: response.data.items,
+      // 検索結果1番目の動画を自動でメイン画面に表示する
+      selectedVideo: response.data.items[0]
+     });
   };
 
   onVideoSelect = (video) => {
