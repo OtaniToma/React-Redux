@@ -11,7 +11,7 @@ const createPolicy = (name, amount) => {
   };
 };
 
-const deletePolicy = () => {
+const deletePolicy = (name) => {
   return {
     type: 'DELETE_POLICY',
     payload: {
