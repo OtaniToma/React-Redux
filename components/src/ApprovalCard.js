@@ -11,7 +11,7 @@ const ApprovalCard = props => {
         </div>
       </div>
     </div>
-  );
+  )
 };
 
 export default ApprovalCard;
