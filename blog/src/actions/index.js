@@ -6,7 +6,6 @@ export const fetchPosts = () => async dispatch => {
     type: 'FETCH_POSTS',
     payload: response.data
   });
-  // Reducer needs data property in the entire response
 };
 
 export const fetchUser = id => async dispatch => {
