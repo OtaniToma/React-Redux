@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 
 const SongDetail = ({ song }) => {
   if (!song) {
-    return <div>Select a song</div>
+    return <div>Select an airport</div>
   }
   return (
     <div>
-      <p>Title: {song.title}</p>
-      <p>Duration: {song.duration}</p>
+      <p>IATA: {song.iata}</p>
+      <p>Name: {song.name}</p>
     </div>
   )
 };

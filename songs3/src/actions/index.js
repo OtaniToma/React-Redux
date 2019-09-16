@@ -1,6 +1,6 @@
-export const selectSong = (song) => {
+export const selectAirport = (airport) => {
   return {
-    type: 'SONG_SELECTED',
-    payload: song
+    type: 'AIRPORT_SELECTED',
+    payload: airport
   };
 };

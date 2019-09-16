@@ -2,15 +2,15 @@ import { combineReducers } from 'redux';
 
 const songsReducer = () => {
   return [
-    { title: '北国の春', duration: '4:05' },
-    { title: '雪國', duration: '2:30' },
-    { title: '津軽海峡冬景色', duration: '3:15' },
-    { title: '函館の女', duration: '1:45' },
+    { iata: 'HND', name: 'Tokyo Haneda' },
+    { iata: 'KIX', name: 'Osaka Kansai' },
+    { iata: 'YVR', name: 'Vancouver' },
+    { iata: 'SEA', name: 'Seattle Tacoma' },
   ]
 };
 
 const selectedSongReducer = (selectedSong=null, action) => {
-  if (action.type === 'SONG_SELECTED') {
+  if (action.type === 'AIRPORT_SELECTED') {
     return action.payload;
   }
 
@@ -18,6 +18,6 @@ const selectedSongReducer = (selectedSong=null, action) => {
 };
 
 export default combineReducers({
-  songs: songsReducer,
+  airports: songsReducer,
   selectedSong: selectedSongReducer
 });

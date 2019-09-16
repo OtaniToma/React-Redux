@@ -1,22 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { selectSong } from '../actions';
+import { selectAirport } from '../actions';
 
 class SongList extends React.Component {
   renderList() {
     // selectSong(); //ダメ
-    return this.props.songs.map((song) => {
+    return this.props.airports.map((airport) => {
       return (
-        <div className="item" key={song.title}>
+        <div className="item" key={airport.iata}>
           <div className="right floated content">
             <button
               className="ui button primary"
-              onClick={() => this.props.selectSong(song)}
+              onClick={() => this.props.selectAirportAirport(airport)}
             >
               Select
             </button>
           </div>
-          <div className="content">{song.title}</div>
+          <div className="content">{airport.iata}</div>
         </div>
       );
     })
@@ -29,7 +29,7 @@ class SongList extends React.Component {
 
 const mapStateToProps = state => {
   console.log(state);
-  return { songs: state.songs };
+  return { airports: state.airports };
 };
 
-export default connect(mapStateToProps, { selectSong })(SongList);
+export default connect(mapStateToProps, { selectAirport })(SongList);
